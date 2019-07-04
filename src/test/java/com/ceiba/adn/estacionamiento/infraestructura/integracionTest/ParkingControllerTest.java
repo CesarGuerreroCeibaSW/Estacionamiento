@@ -51,7 +51,7 @@ public class ParkingControllerTest {
 	@Test
 	public void getActiveTickets() throws Exception {
 		this.mvc.perform(get(API_URL).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON));
 	}
 
 	@Test
@@ -81,7 +81,7 @@ public class ParkingControllerTest {
 	@Test
 	public void registroCilindraje() throws Exception {
 		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA_CILINDRAJE)
-				.conTipoVehiculo(MOTO).conCilindraje(true); 
+				.conTipoVehiculo(MOTO).conCilindraje(true);
 		TiqueteComando ticket = ticketBuilder.build();
 		JSONObject jsonTicketCommand = new JSONObject(ticket);
 		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
@@ -98,114 +98,8 @@ public class ParkingControllerTest {
 		JSONObject jsonTicketCommand = new JSONObject(ticket);
 		CommandResponse<Float> responseExit = new CommandResponse<>(PRECIO_CARRO);
 		JSONObject jsonTicketCommanResponse = new JSONObject(responseExit);
-		System.out.println("XXXX");
-		System.out.println(jsonTicketCommand.toString());
-		System.out.println(jsonTicketCommanResponse.toString());
-		System.out.println("XXXX");
 		mvc.perform(put(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andExpect((content().json(jsonTicketCommanResponse.toString())));
 	}
 	
-	/**
-	@Test
-	public void registroSalidaMoto() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO); 
-		TiqueteComando ticket = ticketBuilder.build();
-		Gson gson = new Gson();
-		String json = gson.toJson(ticket); 
-		JSONObject jsonTicketCommand = new JSONObject(json);
-		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
-		String jsonAux = gson.toJson(commandResponse); 
-		JSONObject jsonTicketCommanResponse = new JSONObject(jsonAux);
-		mvc.perform(post(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(content().json(jsonTicketCommanResponse.toString()));
-	}
-	
-	@Test
-	public void registroSalidaCilindraje() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO); 
-		TiqueteComando ticket = ticketBuilder.build();
-		Gson gson = new Gson();
-		String json = gson.toJson(ticket); 
-		JSONObject jsonTicketCommand = new JSONObject(json);
-		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
-		String jsonAux = gson.toJson(commandResponse); 
-		JSONObject jsonTicketCommanResponse = new JSONObject(jsonAux);
-		mvc.perform(post(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(content().json(jsonTicketCommanResponse.toString()));
-	}
-	
-	@Test
-	public void registroDomingo() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO); 
-		TiqueteComando ticket = ticketBuilder.build();
-		Gson gson = new Gson();
-		String json = gson.toJson(ticket); 
-		JSONObject jsonTicketCommand = new JSONObject(json);
-		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
-		String jsonAux = gson.toJson(commandResponse); 
-		JSONObject jsonTicketCommanResponse = new JSONObject(jsonAux);
-		mvc.perform(post(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(content().json(jsonTicketCommanResponse.toString()));
-	}
-	
-	@Test
-	public void registroMaximoMoto() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO); 
-		TiqueteComando ticket = ticketBuilder.build();
-		Gson gson = new Gson();
-		String json = gson.toJson(ticket); 
-		JSONObject jsonTicketCommand = new JSONObject(json);
-		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
-		String jsonAux = gson.toJson(commandResponse); 
-		JSONObject jsonTicketCommanResponse = new JSONObject(jsonAux);
-		mvc.perform(post(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(content().json(jsonTicketCommanResponse.toString()));
-	}
-	
-	@Test
-	public void registroMaximoCarro() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO); 
-		TiqueteComando ticket = ticketBuilder.build();
-		Gson gson = new Gson();
-		String json = gson.toJson(ticket); 
-		JSONObject jsonTicketCommand = new JSONObject(json);
-		CommandResponse<TiqueteComando> commandResponse = new CommandResponse<>(ticket);
-		String jsonAux = gson.toJson(commandResponse); 
-		JSONObject jsonTicketCommanResponse = new JSONObject(jsonAux);
-		mvc.perform(post(API_URL).content(jsonTicketCommand.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andExpect(content().json(jsonTicketCommanResponse.toString()));
-	}
-	
-	@Test
-	public void registerExitCarFailExcepcionAll() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder().whitLicensePlate(LICENSEPLATE_FAIL);
-		TicketCommand ticket = ticketBuilder.build();
-		JSONObject jsonTicketComman = new JSONObject(ticket);
-		String exceptionName = NullPointerException.class.getSimpleName();
-		Error error = new Error(exceptionName, MESSAGE_ALL_ERROR);
-		JSONObject errorJsonResponse = new JSONObject(error);
-		mvc.perform(put(URL_TICKETS).content(jsonTicketComman.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().is5xxServerError()).andExpect((content().json(errorJsonResponse.toString())));
-	}
-	
-
-	@Test
-	public void registerExitCarFailExcepcion() throws Exception {
-		TicketCommandDataBuilder ticketBuilder = new TicketCommandDataBuilder()
-				.whitLicensePlate(LICENSEPLATE_FAIL_INCOMING).whitTypeVehicle(MOTO).whitDisplacement(DISPLACEMENT);
-		TicketCommand ticket = ticketBuilder.build();
-		JSONObject jsonTicketComman = new JSONObject(ticket);
-		String exceptionName = IncomeNotAllowedException.class.getSimpleName();
-		Error error = new Error(exceptionName, INCOME_NOT_ALLOWED);
-		JSONObject errorJsonResponse = new JSONObject(error);
-		mvc.perform(post(URL_TICKETS).content(jsonTicketComman.toString()).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isNotAcceptable()).andExpect(content().json(errorJsonResponse.toString()));
-	}
-	*/
 }

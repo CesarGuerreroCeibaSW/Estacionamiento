@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
 
 group = 'com.ceiba.estacionamiento'
 version = '0.0.1-SNAPSHOT'
@@ -39,6 +40,6 @@ dependencies {
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.4'
 }
 
-test {
-	useJUnitPlatform()
-}
+//test {
+	//useJUnitPlatform()
+//}
