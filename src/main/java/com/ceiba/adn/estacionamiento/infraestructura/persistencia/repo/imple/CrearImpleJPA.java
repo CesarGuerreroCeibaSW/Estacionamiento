@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
 import com.ceiba.adn.estacionamiento.dominio.repositorio.*;
 import com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidad.EntidadTiquete;
-import com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeo.TiqueteMapeador;
+import com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeotiquete.TiqueteMapeador;
 import com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.query.QueryJPA;
 
 @Component

@@ -1,4 +1,4 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeo;
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeotiquete;
 
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
 import com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidad.EntidadTiquete;
