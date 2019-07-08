@@ -3,7 +3,7 @@ package com.ceiba.adn.estacionamiento.dominio.entidad;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.ArgumentoExcepcion;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.TipoVehiculoInvalidoExcepcion;
 
-public final class ValidadorArgumento {
+public class ValidadorArgumento {
 	
 	private static final String VACIO = "";
 	private static final String MOTO = "MOTO";
