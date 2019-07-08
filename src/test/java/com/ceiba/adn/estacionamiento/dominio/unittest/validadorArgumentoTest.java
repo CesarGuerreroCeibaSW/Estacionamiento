@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import com.ceiba.adn.estacionamiento.dominio.entidad.ValidadorArgumento;
+import com.ceiba.adn.estacionamiento.dominio.entidad.validadorArgumento;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.ArgumentoExcepcion;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.TipoVehiculoInvalidoExcepcion;
 
@@ -21,7 +21,7 @@ public class validadorArgumentoTest {
 	public void validadorArgumentoVacio() {
 		try {
 			// act
-			ValidadorArgumento.validarRequerido(VACIO, PLACA_VACIA);
+			validadorArgumento.validarRequerido(VACIO, PLACA_VACIA);
 			fail();
 		} catch (ArgumentoExcepcion e) {
 			// assert
@@ -33,7 +33,7 @@ public class validadorArgumentoTest {
 	public void argumentValidatorIsNull() {
 		try {
 			// act
-			ValidadorArgumento.validarRequerido(null, PLACA_VACIA);
+			validadorArgumento.validarRequerido(null, PLACA_VACIA);
 			fail();
 		} catch (ArgumentoExcepcion e) {
 			// assert
@@ -45,7 +45,7 @@ public class validadorArgumentoTest {
 	public void argumentValidatorDateIsNull() {
 		try {
 			// act
-			ValidadorArgumento.validarFechaRequerida(null,FECHA_VACIA);
+			validadorArgumento.validarFechaRequerida(null,FECHA_VACIA);
 			fail();
 		} catch (ArgumentoExcepcion e) {
 			// assert
@@ -57,7 +57,7 @@ public class validadorArgumentoTest {
 	public void argumentValidatorInvalidTypeVehicle() {
 		try {
 			// act
-			ValidadorArgumento.validarTipoVehiculo(BUS,TIPO_VEHICULO_INVALIDO);
+			validadorArgumento.validarTipoVehiculo(BUS,TIPO_VEHICULO_INVALIDO);
 			fail();
 		} catch (TipoVehiculoInvalidoExcepcion e) {
 			// assert
