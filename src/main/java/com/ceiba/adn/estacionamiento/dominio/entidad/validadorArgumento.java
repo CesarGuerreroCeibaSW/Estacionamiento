@@ -9,7 +9,7 @@ public class validadorArgumento {
 	private static final String MOTO = "MOTO";
 	private static final String CARRO = "CARRO";
 
-	private validadorArgumento() {}
+	public validadorArgumento() {}
 	
 	
 	public static void validarRequerido(Object valor,String mensaje) {
