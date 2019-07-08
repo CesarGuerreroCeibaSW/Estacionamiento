@@ -31,7 +31,7 @@ public class ErrorTest {
 		response = new ResponseEntity<>(err, HttpStatus.valueOf(500));
 		// act
 		
-		this.erro.handleAllExceptions(new Exception(er));
+		this.erro.handleAllExceptions(er);
 		// assert
 		assertNotNull(response);
 		

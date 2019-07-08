@@ -15,7 +15,9 @@ public final class TiqueteComandoMapeo {
 	}
 
 	public TiqueteComando toCommand(Tiquete entidad) {
-		if(entidad == null) return null;
+		if(entidad == null) {
+			return null;	
+		}
 		TiqueteComando dominio = new TiqueteComando();
 		dominio.setCilindrajeMayor500(entidad.isCilindrajeMayor500());
 		dominio.setPlaca(entidad.getPlaca());
