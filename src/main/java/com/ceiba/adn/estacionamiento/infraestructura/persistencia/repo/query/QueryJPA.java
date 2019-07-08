@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.ceiba.adn.estacionamiento.aplicacion.query.TiqueteActivoQuery;
-import com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidad.EntidadTiquete;
+import com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidadbd.EntidadTiquete;
 
 public interface QueryJPA extends CrudRepository<EntidadTiquete, Long> {
 	

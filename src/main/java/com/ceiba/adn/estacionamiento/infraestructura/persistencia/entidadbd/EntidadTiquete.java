@@ -1,4 +1,4 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidad;
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidadbd;
 
 import java.io.Serializable;
 import java.util.Date;
