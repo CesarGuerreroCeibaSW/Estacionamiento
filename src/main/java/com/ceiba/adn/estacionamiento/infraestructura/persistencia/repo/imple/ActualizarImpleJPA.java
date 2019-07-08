@@ -1,5 +1,4 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.impleJpa;
-
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.imple;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,7 +10,7 @@ import com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeo.TiqueteM
 import com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.query.QueryJPA;
 
 @Component
-public class CrearImpleJPA implements EstacionamientoCrearRepositorio {
+public class ActualizarImpleJPA implements EstacionamientoActualizarRepositorio {
 
 	private static final TiqueteMapeador mapper = TiqueteMapeador.getInstance();
 	
@@ -19,9 +18,10 @@ public class CrearImpleJPA implements EstacionamientoCrearRepositorio {
 	private QueryJPA jpa;
 
 	@Override
-	public Tiquete registrarEntrada(Tiquete tiquete) {
+	public boolean registrarSalida(Tiquete tiquete) {
 		EntidadTiquete entidad = mapper.toEntity(tiquete);
-		return mapper.toDomain(jpa.save(entidad));
+		jpa.save(entidad);
+		return true;
 	}
 
 }

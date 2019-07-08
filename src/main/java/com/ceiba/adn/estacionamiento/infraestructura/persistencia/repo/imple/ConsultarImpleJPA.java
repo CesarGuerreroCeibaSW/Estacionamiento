@@ -1,4 +1,4 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.impleJpa;
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.imple;
 
 import java.util.List;
 
