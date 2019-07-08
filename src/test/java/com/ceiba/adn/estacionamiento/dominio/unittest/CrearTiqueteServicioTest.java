@@ -31,6 +31,7 @@ public class CrearTiqueteServicioTest {
 	private Tiquete tiquete;
 	private Date fechaActual;
 	private Date domingo;
+	private Date martes;
 	private static final String MOTO = "MOTO";
 	private static final String CARRO = "CARRO";
 	private static final boolean CILINDRAJE_MAYOR = true;
@@ -53,6 +54,10 @@ public class CrearTiqueteServicioTest {
 		this.domingo.setMonth(5);
 		this.domingo.setDate(30);
 		this.domingo.setYear(2019);
+		this.martes = Calendar.getInstance().getTime();
+		this.martes.setMonth(6);
+		this.martes.setDate(2);
+		this.martes.setYear(2019);
 	}
 
 	@Test
@@ -125,10 +130,10 @@ public class CrearTiqueteServicioTest {
 	 public void crearTiquetePlacaA() {
 		// arrange
 		this.tiqueteBuilder = new TiqueteTestDatabuilder().conPlaca(PLACA_A)
-				.conTipoVehiculo(CARRO).conFechaEntrada(fechaActual);
+				.conTipoVehiculo(CARRO).conFechaEntrada(martes);
 		this.tiquete = this.tiqueteBuilder.build();
 		this.tiqueteBuilder = new TiqueteTestDatabuilder().conPlaca(PLACA_A)
-				.conTipoVehiculo(CARRO).conFechaEntrada(fechaActual).conPrecio(0).conEstadoIngreso(true);
+				.conTipoVehiculo(CARRO).conFechaEntrada(martes).conPrecio(0).conEstadoIngreso(true);
 		Tiquete tiqueteRegistrado = this.tiqueteBuilder.build();
 		when(this.crearRepositorio.registrarEntrada(this.tiquete)).thenReturn(tiqueteRegistrado);
 		this.servicio = new CrearTiqueteServicio(this.crearRepositorio, consultarRepositorio);
