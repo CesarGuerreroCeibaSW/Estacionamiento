@@ -1,4 +1,4 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.Repositorio.query;
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.repo.query;
 
 import java.util.List;
 
