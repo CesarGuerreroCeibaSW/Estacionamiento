@@ -5,7 +5,7 @@ import java.util.List;
 import com.ceiba.adn.estacionamiento.aplicacion.query.TiqueteActivoQuery;
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.VehiculoNoEncontradoExcepcion;
-import com.ceiba.adn.estacionamiento.dominio.repositorio.EstacionamientoConsultarRepositorio;;
+import com.ceiba.adn.estacionamiento.dominio.repositorio.EstacionamientoConsultarRepositorio;
 
 
 public class BuscarTiquetesActivosServicio {

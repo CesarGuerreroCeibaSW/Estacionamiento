@@ -22,14 +22,14 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/api/tiquete")
 @Api(tags = { "Controlador tiquete"})
-public class Controlador {
+public class ControladorEstacionamiento {
 	
 	private final CreateTicketCommandHandler createTicketCommandHandler;
 	private final UpdateTicketCommandHandler updateTicketCommandHandler;
 	private final BuscarTiquetesActivosQueryManejador findActiveTicketsQueryHandler;
 	
 	
-	public Controlador(CreateTicketCommandHandler createTicketCommandHandler,
+	public ControladorEstacionamiento(CreateTicketCommandHandler createTicketCommandHandler,
 			UpdateTicketCommandHandler updateTicketCommandHandler,
 			BuscarTiquetesActivosQueryManejador findActiveTicketsQueryHandler) {
 		this.createTicketCommandHandler = createTicketCommandHandler;
@@ -53,8 +53,7 @@ public class Controlador {
 	@PutMapping()
 	@ApiOperation("Actualizar tiquete")
 	public CommandResponse<Float> put(@RequestBody TiqueteComando tiquete) {
-		CommandResponse<Float> x = this.updateTicketCommandHandler.exec(tiquete.getPlaca()); 
-		return x;
+		return this.updateTicketCommandHandler.exec(tiquete.getPlaca());
 	}
 	
 }

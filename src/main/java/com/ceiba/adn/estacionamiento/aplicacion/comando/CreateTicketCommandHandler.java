@@ -7,7 +7,7 @@ import com.ceiba.adn.estacionamiento.aplicacion.comun.commandhandleresponse.Comm
 import com.ceiba.adn.estacionamiento.aplicacion.fabrica.TiqueteFabrica;
 import com.ceiba.adn.estacionamiento.aplicacion.mapeo.TiqueteComandoMapeo;
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
-import com.ceiba.adn.estacionamiento.dominio.servicio.CrearTiqueteServicio;;
+import com.ceiba.adn.estacionamiento.dominio.servicio.CrearTiqueteServicio;
 
 @Component
 public class CreateTicketCommandHandler implements CommandHandleResponse<TiqueteComando, CommandResponse<TiqueteComando>> {

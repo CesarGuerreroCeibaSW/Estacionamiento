@@ -17,6 +17,8 @@ public class CrearTiqueteServicio {
 	private static final String ESTACIONAMIENTO_CARRO_LLENO = "No hay espacio disponible para ingresar el carro";
 	private static final String ESTACIONAMIENTO_MOTO_LLENO = "No hay espacio disponible para ingresar la moto";
 	private static final String DIA_INGRESO_NO_PERMITIDO = "El vehiculo no esta autorizado a ingresar los dias Domingo y Lunes";
+	private static final String CARRO = "CARRO";
+	private static final String MOTO = "MOTO";
 	
 	public CrearTiqueteServicio(EstacionamientoCrearRepositorio crearRepositorio,
 			EstacionamientoConsultarRepositorio consultarRepositorio) {
@@ -40,9 +42,9 @@ public class CrearTiqueteServicio {
 	}
 
 	private void validarCapacidadTipoVehiculo(String tipoVehiculo) {
-		if(tipoVehiculo.equalsIgnoreCase("CARRO") && this.consultarRepositorio.contarCarrosActivos() > 19) {
+		if(tipoVehiculo.equalsIgnoreCase(CARRO) && this.consultarRepositorio.contarCarrosActivos() > 19) {
 			throw new CapacidadMaximaCarroExcepcion(ESTACIONAMIENTO_CARRO_LLENO);
-		} else if (tipoVehiculo.equalsIgnoreCase("MOTO") && this.consultarRepositorio.contarMotosActivas() > 9){
+		} else if (tipoVehiculo.equalsIgnoreCase(MOTO) && this.consultarRepositorio.contarMotosActivas() > 9){
 			throw new CapacidadMaximaMotoExcepcion(ESTACIONAMIENTO_MOTO_LLENO);
 		} 
 	}

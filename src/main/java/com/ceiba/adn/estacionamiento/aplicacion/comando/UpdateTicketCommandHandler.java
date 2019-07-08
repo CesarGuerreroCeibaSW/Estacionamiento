@@ -19,7 +19,6 @@ public class UpdateTicketCommandHandler implements CommandHandleResponse<String,
 	public CommandResponse<Float> exec(String placa) {
 		
 		Float price = this.actualizarTiquetesServicio.registrarSalida(placa);
-		System.out.println(price);
 		return new CommandResponse<>(price);
 	}
 

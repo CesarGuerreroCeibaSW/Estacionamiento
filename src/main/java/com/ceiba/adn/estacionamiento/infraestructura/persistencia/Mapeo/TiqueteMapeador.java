@@ -1,7 +1,7 @@
-package com.ceiba.adn.estacionamiento.infraestructura.persistencia.Mapeo;
+package com.ceiba.adn.estacionamiento.infraestructura.persistencia.mapeo;
 
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
-import com.ceiba.adn.estacionamiento.infraestructura.persistencia.Entidad.EntidadTiquete;
+import com.ceiba.adn.estacionamiento.infraestructura.persistencia.entidad.EntidadTiquete;
 
 public final class TiqueteMapeador {
 
