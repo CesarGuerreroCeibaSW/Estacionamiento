@@ -14,8 +14,5 @@ public interface EstacionamientoConsultarRepositorio {
 	public long contarCarrosActivos();
 	
 	public long contarMotosActivas();
-	
-	public boolean validarExistente(String placa);
-	
-	
+		
 }

@@ -27,12 +27,6 @@ public class ConsultarImpleJPA implements EstacionamientoConsultarRepositorio {
 	}
 
 	@Override
-	public boolean validarExistente(String placa) {
-		EntidadTiquete entidad = jpa.buscarPorPlaca(placa);
-		return entidad != null;
-	}
-
-	@Override
 	public Tiquete buscarVehiculo(String placa) {
 		EntidadTiquete entity = jpa.buscarPorPlaca(placa);
 		return mapper.toDomain(entity);
