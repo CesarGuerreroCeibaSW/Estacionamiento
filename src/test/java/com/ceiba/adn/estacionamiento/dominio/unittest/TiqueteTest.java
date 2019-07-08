@@ -18,7 +18,6 @@ public class TiqueteTest {
 	private static final Date FECHA_EMTRADA = Calendar.getInstance().getTime();
 	private static final String PLACA_MOTO = "UFP-201";
 	private static final String PLACA_CARRO = "FPS-013";
-	private static final boolean CILINDRAJE_MAYOR= true;
 	private static final String CARRO = "CARRO";
 	private static final String MOTO = "MOTO";
 

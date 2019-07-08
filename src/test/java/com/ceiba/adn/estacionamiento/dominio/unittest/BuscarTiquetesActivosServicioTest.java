@@ -15,7 +15,6 @@ import org.junit.Test;
 
 import com.ceiba.adn.estacionamiento.aplicacion.query.TiqueteActivoQuery;
 import com.ceiba.adn.estacionamiento.dominio.entidad.Tiquete;
-import com.ceiba.adn.estacionamiento.dominio.excepcion.DiaIngresoNoPermitidoExcepcion;
 import com.ceiba.adn.estacionamiento.dominio.excepcion.VehiculoNoEncontradoExcepcion;
 import com.ceiba.adn.estacionamiento.dominio.repositorio.EstacionamientoConsultarRepositorio;
 import com.ceiba.adn.estacionamiento.dominio.servicio.BuscarTiquetesActivosServicio;
@@ -60,8 +59,6 @@ public class BuscarTiquetesActivosServicioTest {
 	 public void buscarTiqueteActivo() {
 		// arrange
 		TiqueteTestDatabuilder tiqueteBuilder = new TiqueteTestDatabuilder().conPlaca(PLACA)
-				.conTipoVehiculo(CARRO).conFechaEntrada(fechaActual);
-		tiqueteBuilder = new TiqueteTestDatabuilder().conPlaca(PLACA)
 				.conTipoVehiculo(CARRO).conFechaEntrada(fechaActual).conPrecio(0).conEstadoIngreso(true);
 		Tiquete tiqueteRegistrado = tiqueteBuilder.build();
 		when(this.consultarRepositorio.buscarVehiculo(PLACA)).thenReturn(tiqueteRegistrado);
