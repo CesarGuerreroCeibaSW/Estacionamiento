@@ -26,10 +26,10 @@ public class Tiquete {
 	
 	public Tiquete(String placa,boolean cilindraje,String tipoVehiculo,Date fechaEntrada) {
 		
-		ValidadorArgumento.validarRequerido(placa, PLACA_VACIA);
-		ValidadorArgumento.validarRequerido(tipoVehiculo, TIPO_VEHICULO_VACIO);
-		ValidadorArgumento.validarTipoVehiculo(tipoVehiculo, TIPO_VEHICULO_INVALIDO);
-		ValidadorArgumento.validarFechaRequerida(fechaEntrada, FECHA_ACTUAL_VACIA);
+		validadorArgumento.validarRequerido(placa, PLACA_VACIA);
+		validadorArgumento.validarRequerido(tipoVehiculo, TIPO_VEHICULO_VACIO);
+		validadorArgumento.validarTipoVehiculo(tipoVehiculo, TIPO_VEHICULO_INVALIDO);
+		validadorArgumento.validarFechaRequerida(fechaEntrada, FECHA_ACTUAL_VACIA);
 		
 		this.placa= placa;
 		this.fechaEntrada = fechaEntrada;
@@ -37,7 +37,7 @@ public class Tiquete {
 		this.tipoVehiculo = tipoVehiculo;
 		
 		if(tipoVehiculo.equalsIgnoreCase(MOTO)) {
-			ValidadorArgumento.validarRequerido(cilindraje, CILINDRAJE_MOTO_VACIO);
+			validadorArgumento.validarRequerido(cilindraje, CILINDRAJE_MOTO_VACIO);
 			this.cilindrajeMayor500 = cilindraje;
 		}
 		
